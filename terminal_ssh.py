@@ -223,9 +223,14 @@ class SshTerminal(TestAdapter.Adapter):
 		@type lower: templatemessage
 		"""
 		try:
+			# bytes to str
+			if sys.version_info > (3,): 
+				if not isinstance(data, bytes): data = data.encode()
+			
 			# save ssh date in private area, can be useful for debug
 			self.privateAppendFile(destname="ssh_dump.log", data=data)
-			
+
+			# finally decode the data
 			self.codec.decode(data=data)
 		except Exception as e:
 			self.error('Error while waiting on incoming ssh data: %s' % str(e))
