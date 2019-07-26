@@ -159,7 +159,7 @@ class Client(TestAdapterLib.Adapter):
 																									caller=TestAdapterLib.caller(),
 																									agentType=AGENT_TYPE_EXPECTED)
 		if parentName is not None:
-			TestAdapterLib.Adapter.setName(self, name="%s>%s" % (parentName,__NAME__)  )
+			TestAdapterLib.Adapter.setName(self, name="%s_%s" % (parentName,__NAME__)  )
 		self.logEventSent = logEventSent
 		self.logEventReceived = logEventReceived
 		self.parent = parent
