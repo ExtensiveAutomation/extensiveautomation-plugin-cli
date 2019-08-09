@@ -21,21 +21,7 @@
 # MA 02110-1301 USA
 # -------------------------------------------------------------------
 
-import TestExecutorLib.TestValidatorsLib as TestValidators
-import TestExecutorLib.TestTemplatesLib as TestTemplates
-import TestExecutorLib.TestOperatorsLib as TestOperators
-import TestExecutorLib.TestAdapterLib as TestAdapter
-
 import sys
-
-from Libs.PyXmlDict import Xml2Dict
-from Libs.PyXmlDict import Dict2Xml
-
-try:
-	import templates_term
-except ImportError: # python3 support
-	from . import templates_term
-	
 import re
 import time
 import codecs
@@ -43,6 +29,8 @@ import binascii
 
 import pyte
 import threading
+
+from ea.sutadapters.CLI import templates_term
 
 class Observer(threading.Thread):
 	"""

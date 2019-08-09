@@ -20,12 +20,3 @@
 # Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston,
 # MA 02110-1301 USA
 # -------------------------------------------------------------------
-
-try:
-	from terminal_ssh import *
-except ImportError: # python3 support
-	from .terminal_ssh import *
-	
-__DESCRIPTION__ = """This adapter enables to send/receive data trought SSH.
-
- The Secure Shell (SSH) is a protocol for secure remote login over an insecure network."""

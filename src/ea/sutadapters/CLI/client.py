@@ -21,30 +21,26 @@
 # MA 02110-1301 USA
 # -------------------------------------------------------------------
 
-import TestExecutorLib.TestValidatorsLib as TestValidatorsLib
-import TestExecutorLib.TestTemplatesLib as TestTemplatesLib
-import TestExecutorLib.TestOperatorsLib as TestOperatorsLib
-import TestExecutorLib.TestAdapterLib as TestAdapterLib
-
 import sys
-
-IPv4=4
+import threading
+import select
+import socket
+import io
 EXT_SSH_LIB_INSTALLED=True
 try:
 	import paramiko
 except ImportError:
 	EXT_SSH_LIB_INSTALLED=False
-	
-import threading
-import select
-import socket
-import io
 
-try:
-	import templates
-except ImportError: # python3 support
-	from . import templates
-	
+from ea.testexecutorlib import TestValidatorsLib as TestValidatorsLib
+from ea.testexecutorlib import TestTemplatesLib as TestTemplatesLib
+from ea.testexecutorlib import TestOperatorsLib as TestOperatorsLib
+from ea.testexecutorlib import TestAdapterLib as TestAdapterLib
+
+from ea.sutadapters.CLI import templates
+
+IPv4=4
+
 __NAME__="""SSHv2"""
 
 AGENT_INITIALIZED = "AGENT_INITIALIZED"

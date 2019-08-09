@@ -21,12 +21,9 @@
 # MA 02110-1301 USA
 # -------------------------------------------------------------------
 
-import TestExecutorLib.TestValidatorsLib as TestValidatorsLib
-import TestExecutorLib.TestTemplatesLib as TestTemplatesLib
-import TestExecutorLib.TestOperatorsLib as TestOperatorsLib
-import TestExecutorLib.TestAdapterLib as TestAdapterLib
-
 import sys
+
+from ea.testexecutorlib import TestTemplatesLib as TestTemplatesLib
 
 def ssh(host=None, port=None, more=None):
 	"""

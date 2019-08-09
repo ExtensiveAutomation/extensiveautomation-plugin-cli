@@ -21,28 +21,18 @@
 # MA 02110-1301 USA
 # -------------------------------------------------------------------
 
-import TestExecutorLib.TestValidatorsLib as TestValidators
-import TestExecutorLib.TestTemplatesLib as TestTemplates
-import TestExecutorLib.TestOperatorsLib as TestOperators
-import TestExecutorLib.TestAdapterLib as TestAdapter
-
 import sys
-
-from Libs.PyXmlDict import Xml2Dict
-from Libs.PyXmlDict import Dict2Xml
-
 import copy
 
-try:
-	import codec_term
-	import templates_term
-	import templates
-	import client
-except ImportError: # python3 support
-	from . import codec_term
-	from . import templates_term
-	from . import templates
-	from . import client
+from ea.testexecutorlib import TestValidatorsLib as TestValidators
+from ea.testexecutorlib import TestTemplatesLib as TestTemplates
+from ea.testexecutorlib import TestOperatorsLib as TestOperators
+from ea.testexecutorlib import TestAdapterLib as TestAdapter
+
+from ea.sutadapters.CLI import codec_term
+from ea.sutadapters.CLI import templates_term
+from ea.sutadapters.CLI import templates
+from ea.sutadapters.CLI import client
 
 __NAME__= """TERM"""
 
