@@ -26,6 +26,7 @@ import threading
 import select
 import socket
 import io
+
 EXT_SSH_LIB_INSTALLED=True
 try:
 	import paramiko
@@ -38,6 +39,10 @@ from ea.testexecutorlib import TestOperatorsLib as TestOperatorsLib
 from ea.testexecutorlib import TestAdapterLib as TestAdapterLib
 
 from ea.sutadapters.CLI import templates
+
+# unicode = str with python3
+if sys.version_info > (3,):
+    unicode = str
 
 IPv4=4
 
