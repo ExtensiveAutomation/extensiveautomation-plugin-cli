@@ -1,5 +1,7 @@
 properties:
   parameters:
+   - name: ssh-agent
+     value: null
    - name: ssh-commands
      value: 
    - name: ssh-hosts
@@ -21,10 +23,9 @@ python: |
           
           ssh_agent = None
           ssh_agent_support = False
-          if "ssh-agent" in svr:
-              if svr["ssh-agent"] is not None:
-                  ssh_agent_support = True
-                  ssh_agent = svr["ssh-agent"]
+          if input("ssh-agent") is not None:
+              ssh_agent_support = True
+              ssh_agent = input("ssh-agent")
 
           ssh_password = ""
           if "ssh-password" in svr:
