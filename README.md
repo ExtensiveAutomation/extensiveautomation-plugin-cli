@@ -1,13 +1,15 @@
-CLI plugin for ExtensiveAutomation server
-===================================================
-
-Introduction
-------------
+# CLI plugin for ExtensiveAutomation server
 
 This plugin enable to interact with remote system throught the SSH protocol.
 
-Installing from pypi
---------------------
+## Table of contents
+* [Installing from pypi](#installing-from-pypi)
+* [Installing from source](#installing-from-source)
+* [About actions](#about-actions)
+    * [ssh/send_commands.yml](#sshsend_commandsyml)
+    * [ssh/send_expect.yml](#sshsend_expectyml)
+    
+## Installing from pypi
 
 1. Run the following command
 
@@ -19,8 +21,7 @@ Installing from pypi
         
 3. Samples are deployed on data storage.
 
-Installing from source
-----------------------
+## Installing from source
 
 1. Clone the following repository 
 
@@ -40,3 +41,72 @@ Installing from source
         cd /<install_path_project>/src/
         python3 extensiveautomation.py --install_adapter CLI
         python3 extensiveautomation.py --reload
+        
+## About actions
+
+## ssh/send_commands.yml
+
+Send ssh commands on one or severals hosts.
+
+Parameter(s):
+- ssh-commands (text): bash commands
+
+```yaml
+- name: ssh-commands
+  value: |-
+    echo "hello world" >> /var/log/messages
+    echo "hola mondu" >> /var/log/messages
+```
+ 
+- ssh-hosts (list): ssh remote addresses
+
+```yaml
+- name: ssh-hosts
+  value:
+   - ssh-host: 10.0.0.55
+     ssh-login: root
+     ssh-password: bonjour
+```
+
+- ssh-agent (dict): agent to use
+
+```yaml
+- name: ssh-agent
+  value:
+    type: ssh
+    name: agent
+```
+
+## ssh/send_expect.yml
+
+Send ssh commands on one or severals hosts and expect outputs.
+
+Parameter(s):
+- ssh-commands (text): bash commands
+
+```yaml
+- name: ssh-commands
+ value: |-
+    # get hostname
+    uname -n
+    .*\n[!CAPTURE:MACHINE_HOSTNAME:]\n.*
+```
+   
+- ssh-hosts (dict): ssh remote addresses
+
+```yaml
+- name: ssh-hosts
+  value:
+   - ssh-host: 10.0.0.55
+     ssh-login: root
+     ssh-password: bonjour
+```
+
+- ssh-agent (dict): agent to use
+
+```yaml
+- name: ssh-agent
+  value:
+    type: ssh
+    name: agent
+```
