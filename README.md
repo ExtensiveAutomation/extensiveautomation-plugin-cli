@@ -8,6 +8,9 @@ This plugin enable to interact with remote system throught the SSH protocol.
 * [About actions](#about-actions)
     * [ssh/send_commands.yml](#sshsend_commandsyml)
     * [ssh/send_expect.yml](#sshsend_expectyml)
+* [About workflows](#about-workflows) 
+    * [ssh/send_commands.yml](#sshsend_commandsyml)
+    * [ssh/send_expect.yml](#sshsend_expectyml)
     
 ## Installing from pypi
 
@@ -110,3 +113,13 @@ Parameter(s):
     type: ssh
     name: agent
 ```
+
+## About workflows
+
+## ssh/send_commands.yml
+
+This worflow show how to use `ssh` actions.
+
+## ssh/send_expect.yml
+
+This worflow show how to use `ssh` actions.
