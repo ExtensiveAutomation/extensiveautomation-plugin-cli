@@ -109,8 +109,8 @@ class SshTerminal(TestAdapter.Adapter):
 		"""
 		# init adapter
 		TestAdapter.Adapter.__init__(self, name = __NAME__, parent = parent, 
-																							debug=debug, realname=name, shared=shared,
-																							showEvts=verbose, showSentEvts=verbose, showRecvEvts=verbose )
+                                    debug=debug, realname=name, shared=shared,
+                                    showEvts=verbose, showSentEvts=verbose, showRecvEvts=verbose )
 		
 		self.parent = parent
 		self.logEventSent = logEventSent
@@ -119,20 +119,20 @@ class SshTerminal(TestAdapter.Adapter):
 		self.codec  = None
 		self.ADP_SSH = None
 		self.ADP_SSH = client.Client(parent=parent, login=login, password=password, 
-																							privateKey=privateKey, privateKeyPath=privateKeyPath,
-																							bindIp=bindIp, bindPort=bindPort,  destIp=destIp, destPort=destPort, 
-																							destHost='',  debug=debug, logEventSent=False, 
-																							logEventReceived=False, parentName=__NAME__, 
-																							shared=shared, sftpSupport=False, agent=agent,  
-																							agentSupport=agentSupport, verbose = verbose,
-																							terminalWidth=terminalWidth, terminalHeight=terminalHeight
+                                    privateKey=privateKey, privateKeyPath=privateKeyPath,
+                                    bindIp=bindIp, bindPort=bindPort,  destIp=destIp, destPort=destPort, 
+                                    destHost='',  debug=debug, logEventSent=False, 
+                                    logEventReceived=False, parentName=__NAME__, 
+                                    shared=shared, sftpSupport=False, agent=agent,  
+                                    agentSupport=agentSupport, verbose = verbose,
+                                    terminalWidth=terminalWidth, terminalHeight=terminalHeight
 																				)
 		self.buf = ''
 
 		self.codec = codec_term.Codec(parent=self, 
-																								terminalWidth=terminalWidth, 
-																								terminalHeight=terminalHeight, 
-																								cycleSnap=cycleSnap)
+                                        terminalWidth=terminalWidth, 
+                                        terminalHeight=terminalHeight, 
+                                        cycleSnap=cycleSnap)
 		self.cfg = {}
 		
 		self.cfg['dst-ip'] = destIp

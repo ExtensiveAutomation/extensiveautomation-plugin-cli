@@ -42,7 +42,7 @@ This plugin enable to interact with remote system throught the SSH protocol.
 4. Finally execute the following command to install depandencies
 
         cd /<install_path_project>/src/
-        python3 extensiveautomation.py --install_adapter CLI
+        python3 extensiveautomation.py --install-adapter CLI
         python3 extensiveautomation.py --reload
         
 ## About actions
@@ -71,13 +71,11 @@ Parameter(s):
      ssh-password: bonjour
 ```
 
-- ssh-agent (dict): agent to use
+- agent (text): agent name to use
 
 ```yaml
 - name: ssh-agent
-  value:
-    type: ssh
-    name: agent
+  value: agent02.ssh
 ```
 
 ## ssh/send_expect.yml
@@ -105,13 +103,11 @@ Parameter(s):
      ssh-password: bonjour
 ```
 
-- ssh-agent (dict): agent to use
+- agent (text): agent name to use
 
 ```yaml
 - name: ssh-agent
-  value:
-    type: ssh
-    name: agent
+  value: agent02.ssh
 ```
 
 ## About workflows
